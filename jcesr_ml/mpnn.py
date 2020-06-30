@@ -22,6 +22,14 @@ import json
 import os
 
 
+def atom_feature_element_only(atom) -> str:
+    return str(atom.GetSymbol())
+
+
+def bond_feature_type_only(bond, **kwargs) -> str:
+    return str((bond.GetBondType(), bond.GetIsConjugated()))
+
+
 def set_custom_objects():
     """Add custom objects to dictionary for loading Keras model"""
     general_keras_layers()
