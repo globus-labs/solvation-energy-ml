@@ -1,21 +1,22 @@
 name: solv_ml
 channels:
-  - default
+  - defaults
   - conda-forge
 dependencies:
   - python==3.6.8
   - pymatgen==2019.7.2
-  - numpy
+  - numpy==1.18.1
   - pandas==0.23.4
   - scikit-learn==0.20.0
   - matplotlib==3.0.3
   - openbabel==3.0.0
-  - tensorflow==1.13.1
+  - tensorflow==1.13.*
   - rdkit==2019.03.2.0
   - xlrd==1.2.0
   - h5py==2.9.0
-  - keras==2.2.5
+  - keras==2.3.*
   - networkx==2.4
+  - bokeh==1.4.0
   - jupyterlab
   - mpi4py
   - psutil
