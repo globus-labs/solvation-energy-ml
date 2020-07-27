@@ -12,6 +12,7 @@ from keras.optimizers import Adam
 from sklearn.model_selection import train_test_split
 from nfp.preprocessing import GraphSequence
 import pandas as pd
+import numpy as np
 
 
 from jcesr_ml.benchmark import load_benchmark_data
@@ -33,6 +34,8 @@ if __name__ == "__main__":
     parser.add_argument('--batch-size', '-t', default=64, help='Batch size', type=int)
     parser.add_argument('--num-epochs', '-n', help='Number of epochs to run during training', type=int, default=128)
     parser.add_argument('--seed', '-S', help='Random state', type=int, default=1)
+    parser.add_argument('--lr-start', help='Starting learning rate', type=float, default=1e-3)
+    parser.add_argument('--lr-final', help='Final learning rate', type=float, default=1e-6)
     parser.add_argument('name', help='Name of the model to be trained', type=str)
     parser.add_argument('train_size', help='Training set size', type=int)
 
@@ -43,7 +46,7 @@ if __name__ == "__main__":
     # Determine the working directories
     net_dir = os.path.join('networks', args.name)
     run_hash = hashlib.sha256(json.dumps(run_params).encode()).hexdigest()[:6]
-    run_name = f'T{args.train_size}-B{args.batch_size}-{run_hash}'
+    run_name = f'B{args.batch_size}-N{args.num_epochs}-L{args.lr_start: .3e}-{run_hash}'
     work_dir = os.path.join(net_dir, run_name)
 
     # Make directories
@@ -53,6 +56,10 @@ if __name__ == "__main__":
     logger = logging.getLogger('main-thread')
     logger.info(f'Training {args.name} on a training set size of {args.train_size}')
     logger.info(f'Saving results to {work_dir}')
+
+    # Save the configuration
+    with open(os.path.join(work_dir, 'config.json'), 'w') as fp:
+        json.dump(run_params, fp)
 
     # Load in the training details
     with open(os.path.join(net_dir, 'options.json')) as fp:
@@ -66,11 +73,6 @@ if __name__ == "__main__":
     train_data, test_data = load_benchmark_data()
     train_data = train_data.sample(args.train_size, random_state=args.seed)
     logger.info(f'Loaded {len(train_data)} training and {len(test_data)} test entries')
-
-    # Set the scale layer
-    output_props = train_data[options['output_props']]
-    model.get_layer('scale').set_weights([output_props.std(axis=0)[None, :], output_props.mean(axis=0)])
-    logger.info('Initialized weights for the scaling layer')
 
     # Preprocess the input data
     with open(os.path.join(net_dir, 'converter.pkl'), 'rb') as fp:
@@ -90,8 +92,8 @@ if __name__ == "__main__":
     logger.info('Made train, validation amd test loaders')
 
     # Train the model
-    final_learn_rate = 1e-6
-    init_learn_rate = 1e-3
+    final_learn_rate = args.lr_final
+    init_learn_rate = args.lr_start
     decay_rate = (final_learn_rate / init_learn_rate) ** (1. / (args.num_epochs - 1))
 
     def lr_schedule(epoch, lr):
@@ -105,7 +107,7 @@ if __name__ == "__main__":
             EpochTimeLogger(),
             cb.LearningRateScheduler(lr_schedule),
             cb.ModelCheckpoint(os.path.join(work_dir, 'best_model.h5'), save_best_only=True),
-            cb.EarlyStopping(patience=128, restore_best_weights=True),
+            cb.EarlyStopping(patience=args.num_epochs, restore_best_weights=True),
             cb.CSVLogger(os.path.join(work_dir, 'train_log.csv')),
             cb.TerminateOnNaN()
         ]
