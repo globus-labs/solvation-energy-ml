@@ -1,5 +1,5 @@
 # External Validation
 
-Assess the performance of the model using data not included in training the model and data from different sources.
+Assess the performance and establish domains of applicability using data not included in training the model.
 
-Requires the results from the `mpnn` folders
+Requires the results from the `mpnn-gpu` folder
