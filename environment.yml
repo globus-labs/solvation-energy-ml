@@ -11,7 +11,7 @@ dependencies:
   - matplotlib==3.0.3
   - openbabel==3.0.0
   - tensorflow==1.13.*
-  - rdkit==2019.03.2.0
+  - rdkit==2019.09.3.*
   - xlrd==1.2.0
   - h5py==2.9.0
   - keras==2.3.*
