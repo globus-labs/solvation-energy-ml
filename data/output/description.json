@@ -1,0 +1,304 @@
+{
+  "datacite": {
+    "creators": [
+      {
+        "givenName": "Rajeev",
+        "familyName": "Assary",
+        "affiliations": [
+          "Argonne National Laboratory"
+        ]
+      },
+      {
+        "givenName": "Badri",
+        "familyName": "Narayan",
+        "affiliations": [
+          "Argonne National Laboratory"
+        ]
+      },
+      {
+        "givenName": "Lei",
+        "familyName": "Cheng",
+        "affiliations": [
+          "Argonne National Laboratory"
+        ]
+      },
+      {
+        "givenName": "Larry",
+        "familyName": "Curtiss",
+        "affiliations": [
+          "Argonne National Laboratory"
+        ]
+      }
+    ],
+    "titles": [
+      {
+        "title": "Energetic, Band Structure, and Solubility of GDB9 Molecules Computed with G4MP2"
+      }
+    ],
+    "publisher": "DLHub",
+    "publicationYear": "2019",
+    "identifier": {
+      "identifier": "10.YET/UNASSIGNED",
+      "identifierType": "DOI"
+    },
+    "descriptions": [],
+    "fundingReferences": [],
+    "relatedIdentifiers": [],
+    "alternateIdentifiers": [],
+    "rightsList": [],
+    "resourceType": {
+      "resourceTypeGeneral": "Dataset"
+    }
+  },
+  "dlhub": {
+    "version": "0.1.0",
+    "domains": [],
+    "visible_to": [
+      "public"
+    ],
+    "id": null,
+    "name": "jcesr_gdb9",
+    "files": {
+      "data": "data/output/g4mp2_data.json.gz"
+    }
+  },
+  "dataset": {
+    "format": "json",
+    "read_options": {
+      "lines": true
+    },
+    "columns": [
+      {
+        "name": "A",
+        "type": "float",
+        "description": "Rotational constant",
+        "units": "GHz"
+      },
+      {
+        "name": "B",
+        "type": "float",
+        "description": "Rotational constant",
+        "units": "GHz"
+      },
+      {
+        "name": "C",
+        "type": "float",
+        "description": "Rotational constant",
+        "units": "GHz"
+      },
+      {
+        "name": "R2",
+        "type": "float",
+        "description": "Electronic spatial extant",
+        "units": "a_0^2"
+      },
+      {
+        "name": "alpha",
+        "type": "float",
+        "description": "Isotropic polarizability",
+        "units": "a_0^3"
+      },
+      {
+        "name": "atomic_charges",
+        "type": "python object",
+        "description": "Atomic charges on each atom, as predicted from B3LYP"
+      },
+      {
+        "name": "bandgap",
+        "type": "float",
+        "description": "B3LYP Band gap energy",
+        "units": "Ha"
+      },
+      {
+        "name": "cv",
+        "type": "float",
+        "description": "Heat capacity at 298.15K",
+        "units": "cal/mol-K"
+      },
+      {
+        "name": "filename",
+        "type": "python object"
+      },
+      {
+        "name": "g",
+        "type": "float",
+        "description": "B3LYP Free energy at 298.15K",
+        "units": "Ha"
+      },
+      {
+        "name": "g4mp2_0k",
+        "type": "float",
+        "description": "G4MP2 Internal energy at 0K",
+        "units": "Ha"
+      },
+      {
+        "name": "g4mp2_atom",
+        "type": "float",
+        "description": "G4MP2 atomization energy at 0K",
+        "units": "Ha"
+      },
+      {
+        "name": "g4mp2_atomization",
+        "type": "float",
+        "description": "G4MP2 atomization energy",
+        "units": "kcal/mol"
+      },
+      {
+        "name": "g4mp2_energy",
+        "type": "float",
+        "description": "G4MP2 Internal energy at 298.15K",
+        "units": "Ha"
+      },
+      {
+        "name": "g4mp2_enthalpy",
+        "type": "float",
+        "description": "G4MP2 Enthalpy at 298.15K",
+        "units": "Ha"
+      },
+      {
+        "name": "g4mp2_free",
+        "type": "float",
+        "description": "G4MP2 Free eergy at 0K",
+        "units": "Ha"
+      },
+      {
+        "name": "g4mp2_hf298",
+        "type": "float",
+        "description": "G4MP2 Standard Enthalpy of Formation, 298K",
+        "units": "kcal/mol"
+      },
+      {
+        "name": "h",
+        "type": "float",
+        "description": "B3LYP Enthalpy at 298.15K",
+        "units": "Ha"
+      },
+      {
+        "name": "homo",
+        "type": "float",
+        "description": "B3LYP Energy of HOMO",
+        "units": "Ha"
+      },
+      {
+        "name": "in_holdout",
+        "type": "boolean",
+        "description": "Whether the entry is in the pre-defined holdout set"
+      },
+      {
+        "name": "inchi_0",
+        "type": "string",
+        "description": "InChi after generating coordinates with CORINA"
+      },
+      {
+        "name": "inchi_1",
+        "type": "string",
+        "description": "InChi after relaxation"
+      },
+      {
+        "name": "index",
+        "type": "integer",
+        "description": "Index number in the database"
+      },
+      {
+        "name": "lumo",
+        "type": "float",
+        "description": "B3LYP Energy of LUMO",
+        "units": "Ha"
+      },
+      {
+        "name": "mu",
+        "type": "float",
+        "description": "Dipole moment",
+        "units": "D"
+      },
+      {
+        "name": "n_atom",
+        "type": "integer",
+        "description": "Number of atoms in molecule"
+      },
+      {
+        "name": "n_electrons",
+        "type": "integer",
+        "description": "Numebr of electrons"
+      },
+      {
+        "name": "n_heavy_atoms",
+        "type": "integer",
+        "description": "Number of non-hydrogen atoms"
+      },
+      {
+        "name": "name",
+        "type": "python object",
+        "description": "Filename"
+      },
+      {
+        "name": "smiles_0",
+        "type": "string",
+        "description": "Input smiles string"
+      },
+      {
+        "name": "smiles_1",
+        "type": "string",
+        "description": "SMILES string after relaxation"
+      },
+      {
+        "name": "sol_acetone",
+        "type": "float",
+        "description": "Solubility in acetone"
+      },
+      {
+        "name": "sol_acn",
+        "type": "float",
+        "description": "Solubility in acn"
+      },
+      {
+        "name": "sol_dmso",
+        "type": "float",
+        "description": "Solubility in dmso"
+      },
+      {
+        "name": "sol_ethanol",
+        "type": "float",
+        "description": "Solubility in ethanol"
+      },
+      {
+        "name": "sol_water",
+        "type": "float",
+        "description": "Solubility in water"
+      },
+      {
+        "name": "u",
+        "type": "float",
+        "description": "B3LYP Internal energy at 298.15K",
+        "units": "Ha"
+      },
+      {
+        "name": "u0",
+        "type": "float",
+        "description": "B3LYP Internal energy at 0K",
+        "units": "Ha"
+      },
+      {
+        "name": "u0_atom",
+        "type": "float",
+        "description": "B3LYP atomization energy at 0K",
+        "units": "Ha"
+      },
+      {
+        "name": "xyz",
+        "type": "XYZ file",
+        "description": "XYZ coordinates after relaxation"
+      },
+      {
+        "name": "zpe",
+        "type": "float",
+        "description": "B3LYP Zero point vibrational energy",
+        "units": "Ha"
+      }
+    ],
+    "inputs": [
+      "smiles_0",
+      "xyz"
+    ]
+  }
+}

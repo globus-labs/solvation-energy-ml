@@ -1,0 +1,132 @@
+{
+  "datacite": {
+    "creators": [
+      {
+        "givenName": "Naveen",
+        "familyName": "Dandu",
+        "affiliations": [
+          "Argonne National Laboratory"
+        ]
+      },
+      {
+        "givenName": "Rajeev",
+        "familyName": "Assary",
+        "affiliations": [
+          "Argonne National Laboratory"
+        ]
+      },
+      {
+        "givenName": "Badri",
+        "familyName": "Narayanan",
+        "affiliations": [
+          "Argonne National Laboratory"
+        ]
+      },
+      {
+        "givenName": "Larry",
+        "familyName": "Curtiss",
+        "affiliations": [
+          "Argonne National Laboratory"
+        ]
+      }
+    ],
+    "titles": [
+      {
+        "title": "Solvation Energy of 191 Large Molecules"
+      }
+    ],
+    "publisher": "DLHub",
+    "publicationYear": "2020",
+    "identifier": {
+      "identifier": "10.YET/UNASSIGNED",
+      "identifierType": "DOI"
+    },
+    "descriptions": [],
+    "fundingReferences": [],
+    "relatedIdentifiers": [],
+    "alternateIdentifiers": [],
+    "rightsList": [],
+    "resourceType": {
+      "resourceTypeGeneral": "Dataset"
+    }
+  },
+  "dlhub": {
+    "version": "0.8.3",
+    "domains": [],
+    "visible_to": [
+      "public"
+    ],
+    "name": "pdb_solv",
+    "files": {
+      "data": "data/output/pdb_data.json"
+    },
+    "type": "dataset"
+  },
+  "dataset": {
+    "format": "json",
+    "read_options": {
+      "lines": true
+    },
+    "columns": [
+      {
+        "name": "in_holdout",
+        "type": "boolean",
+        "description": "Whether the entry is in the test set"
+      },
+      {
+        "name": "n_atoms",
+        "type": "integer",
+        "description": "Number of atoms"
+      },
+      {
+        "name": "n_electrons",
+        "type": "integer",
+        "description": "Number of electrons"
+      },
+      {
+        "name": "n_heavy_atoms",
+        "type": "integer",
+        "description": "Number of non-hydrogen atoms"
+      },
+      {
+        "name": "name",
+        "type": "python object",
+        "description": "Filename, which contains the name of the molecule"
+      },
+      {
+        "name": "smiles",
+        "type": "string",
+        "description": "SMILES string after relaxation"
+      },
+      {
+        "name": "sol_acn",
+        "type": "float",
+        "description": "Solubility in acn"
+      },
+      {
+        "name": "sol_dmso",
+        "type": "float",
+        "description": "Solubility in dmso"
+      },
+      {
+        "name": "sol_water",
+        "type": "float",
+        "description": "Solubility in water"
+      },
+      {
+        "name": "source",
+        "type": "python object",
+        "description": "Source of the dataset"
+      },
+      {
+        "name": "xyz",
+        "type": "XYZ file",
+        "description": "XYZ coordinates after relaxation"
+      }
+    ],
+    "inputs": [
+      "smiles",
+      "xyz"
+    ]
+  }
+}
