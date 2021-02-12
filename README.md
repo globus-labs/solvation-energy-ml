@@ -1,7 +1,7 @@
 # Predicting Solvation Energy for Small Molecules with Machine Learning
 
 This repository contains the code associated with a recent paper by Ward et al., 
-[Title TBD](http://arxiv.org/)
+[Datasets and Machine Learning Models for Accurate Estimates of Solvation Energy in Multiple Solvents](http://arxiv.org/)
 
 ## Using the Model
 
