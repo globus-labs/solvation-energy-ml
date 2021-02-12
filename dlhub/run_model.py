@@ -13,4 +13,4 @@ args = parser.parse_args()
 # Make the DLHub client
 client = DLHubClient()
 result = client.run(args.servable, args.smiles)
-print(json.dumps(result))
+print(json.dumps(result, indent=2))
