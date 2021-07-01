@@ -1,7 +1,9 @@
 # Predicting Solvation Energy for Small Molecules with Machine Learning
 
 This repository contains the code associated with a recent paper by Ward et al., 
-[Datasets and Machine Learning Models for Accurate Estimates of Solvation Energy in Multiple Solvents](http://arxiv.org/)
+[Graph-Based Approaches for Predicting Solvation Energy in Multiple Solvents: Open Datasets and Machine Learning Models](https://pubs.acs.org/doi/pdf/10.1021/acs.jpca.1c01960) (also on [ChemArxiv](https://doi.org/10.33774/chemrxiv-2021-5tf55))
+
+The version of this repository as of publication is available [on the Materials Data Facility](https://doi.org/10.18126/tvys-3xcr).
 
 ## Using the Model
 
